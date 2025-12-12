@@ -1,4 +1,4 @@
-Detailed explanation of main.tf file
+## Detailed explanation of main.tf file
 
 ### S3 Bucket (Private Website Storage)
 
@@ -41,7 +41,7 @@ resource "aws_s3_object" "index" {
 
 - Uploads your index.html to the bucket.
 
-- Same for error.html.
+- Same for error.html
 
 ### CloudFront OAC (Origin Access Control)
 
@@ -176,11 +176,11 @@ resource "aws_s3_bucket_policy" "policy" {
 
 Breakdown:
 
-- Principal = cloudfront.amazonaws.com → Only CloudFront is allowed.
+- Principal = cloudfront.amazonaws.com -> Only CloudFront is allowed.
 
 - s3:GetObject -> Only allowed action.
 
-- Resource = S3 objects → All files in bucket.
+- Resource = S3 objects -> All files in bucket.
 
 Condition:
 
