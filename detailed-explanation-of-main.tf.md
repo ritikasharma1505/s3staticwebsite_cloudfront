@@ -91,7 +91,7 @@ origin {
 }
 ```
 
-- CloudFront needs to know where your files are → S3 bucket.
+- CloudFront needs to know where your files are -> S3 bucket.
 
 - domain_name points to your bucket.
 
@@ -117,13 +117,13 @@ default_cache_behavior {
 
 - Defines how CloudFront behaves for requests.
 
-- viewer_protocol_policy = redirect-to-https → always forces HTTPS.
+- viewer_protocol_policy = redirect-to-https -> always forces HTTPS.
 
-- allowed_methods = GET, HEAD → perfect for static sites.
+- allowed_methods = GET, HEAD -> perfect for static sites.
 
-- cached_methods → these methods are cached by CloudFront.
+- cached_methods-> these methods are cached by CloudFront.
 
-- query_string = false → CloudFront ignores ?query=params.
+- query_string = false -> CloudFront ignores ?query=params.
 
 ```
 custom_error_response {
@@ -143,7 +143,6 @@ viewer_certificate {
 ```
 - CloudFront uses its own default HTTPS certificate.
 
-- Later you can replace this with Route53 + ACM for your own domain.
 
 ### S3 Bucket Policy (Allow Only CloudFront Access)
 
@@ -172,7 +171,7 @@ resource "aws_s3_bucket_policy" "policy" {
 
 - Think of this like a door rule:
 
-- 'Only CloudFront (not users) can enter this S3 bucket.'
+- 'Only CloudFront (not users) can enter this S3 bucket'
 
 Breakdown:
 
