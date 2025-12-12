@@ -118,3 +118,11 @@ terraform apply
 
 - Custom error pages
 
+Last and final STEP : CLEANUP resources !!!
+
+```
+terraform destroy
+```
+
+******************************************
+
