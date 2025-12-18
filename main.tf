@@ -58,6 +58,13 @@ resource "aws_cloudfront_distribution" "cdn" {
 
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
+
+
+  // cache invalidation - not required, CloudFront naturally expires cache with this code
+    min_ttl     = 0
+    default_ttl = 300
+    max_ttl     = 600
+
     forwarded_values {
       query_string = false
       cookies {
